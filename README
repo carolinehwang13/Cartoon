@@ -1,0 +1,35 @@
+Project: Cartoon
+
+Overview: This program is meant to represent my drive coming from my home in Maryland
+to school here. The label at the center in the top changes based on how far the car
+is on its journey. The car is a representation of the Jeep that I drove back home and
+miss. The Jeep will go back to its starting position when 'R' is pressed. The buildings
+in the background will change color when 'C' is pressed. The program contains 7 main
+classes: App, PaneOrganizer, Cartoon, LabelsAndButton, Jeep, Road, and Constants. App is
+the class that sets up the Stage and instantiates a Scene and PaneOrganizer. The
+PaneOrganizer class creates the root pane. It also creates an instance of LabelsAndButton
+and has the method that allows the locationLabel to change based on the Jeep's position.
+LabelsAndButton is the class that arranges the labels and button that are at the top
+of the screen. Cartoon is also instantiated within PaneOrganizer. Cartoon contains instances
+of Jeep and Road. It gives Jeep the ability to restart when 'R' is pressed and gives the
+buildings in class Road the ability to change color when 'C' is pressed. It also sets up the
+Timeline that moves allows the Jeep to move forward. Jeep the is class that creates the main
+composite shape and contains methods that can set and get the shape's location. Road is
+another class that creates an image made out of different shapes, in this case, the road and
+buildings. The constants class contains any integers and colors that were used when setting
+up the shapes.
+
+Design: One design choice that I made was that I wanted to have a separate class for the
+labels and button rather than just create them in PaneOrganizer. I did this because I wanted
+to add different fonts and colors to the text, so the code that creates the labels and button
+is quite long. It made more sense to me organizationally to just put all of that in another class
+so that PaneOrganizer wouldn't appear so all over the place. This required me to write the
+getLocationLabel() method so that PaneOrganizer could access the private instance variable
+locationLabel. I probably could also have created the road/buildings and Jeep in the same
+overarching composite shape class, but again, it helped me visualize all the parts better
+if I made them separate. Also, I made my Cartoon class associated with PaneOrganizer because
+there was a method updateLabel() in PaneOrganizer that the Timeline I set up in Cartoon
+needed access to in order to update the locationLabel using the Timeline.
+
+Known bugs: I don't believe there are any bugs in the program since everything works as I
+thought it would.
